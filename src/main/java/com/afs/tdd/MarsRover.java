@@ -21,6 +21,8 @@ public class MarsRover {
         }else if (command.equals("R")) {
             if (direction.equals("N")) {
                 carLocation.setDirection("E");
+            } else if (direction.equals("E")) {
+                carLocation.setDirection("S");
             }
         }
         return carLocation;
