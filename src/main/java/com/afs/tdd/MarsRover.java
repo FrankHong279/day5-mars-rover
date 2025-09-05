@@ -15,6 +15,8 @@ public class MarsRover {
                 carLocation.setX(carLocation.getX()+1);
             }else if (direction.equals("S")) {
                 carLocation.setY(carLocation.getY()-1);
+            }else if (direction.equals("W")) {
+                carLocation.setX(carLocation.getX()-1);
             }
         }
         return carLocation;
