@@ -10,32 +10,32 @@ public class MarsRover {
         String direction = carLocation.getDirection();
         if (command.equals("M")) {
             if (direction.equals("N")) {
-                carLocation.setY(carLocation.getY()+1);
-            }else if (direction.equals("E")) {
-                carLocation.setX(carLocation.getX()+1);
-            }else if (direction.equals("S")) {
-                carLocation.setY(carLocation.getY()-1);
-            }else if (direction.equals("W")) {
-                carLocation.setX(carLocation.getX()-1);
+                carLocation.setY(carLocation.getY() + 1);
+            } else if (direction.equals("E")) {
+                carLocation.setX(carLocation.getX() + 1);
+            } else if (direction.equals("S")) {
+                carLocation.setY(carLocation.getY() - 1);
+            } else if (direction.equals("W")) {
+                carLocation.setX(carLocation.getX() - 1);
             }
-        }else if (command.equals("R")) {
+        } else if (command.equals("R")) {
             if (direction.equals("N")) {
                 carLocation.setDirection("E");
             } else if (direction.equals("E")) {
                 carLocation.setDirection("S");
-            }else if (direction.equals("S")) {
+            } else if (direction.equals("S")) {
                 carLocation.setDirection("W");
-            }else if (direction.equals("W")) {
+            } else if (direction.equals("W")) {
                 carLocation.setDirection("N");
             }
-        }else if (command.equals("L")) {
+        } else if (command.equals("L")) {
             if (direction.equals("N")) {
                 carLocation.setDirection("W");
-            }else if (direction.equals("W")) {
+            } else if (direction.equals("W")) {
                 carLocation.setDirection("S");
-            }else if (direction.equals("S")) {
+            } else if (direction.equals("S")) {
                 carLocation.setDirection("E");
-            }else if (direction.equals("E")) {
+            } else if (direction.equals("E")) {
                 carLocation.setDirection("N");
             }
         }
