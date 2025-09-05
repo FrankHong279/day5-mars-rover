@@ -28,6 +28,10 @@ public class MarsRover {
             }else if (direction.equals("W")) {
                 carLocation.setDirection("N");
             }
+        }else if (command.equals("L")) {
+            if (direction.equals("N")) {
+                carLocation.setDirection("W");
+            }
         }
         return carLocation;
     }
