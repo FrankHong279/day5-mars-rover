@@ -6,7 +6,13 @@ package com.afs.tdd;
  * @date 9/5/2025 3:12 PM
  */
 public class MarsRover {
-    public CarLocation report(CarLocation carLocation,String command) {
-        return new CarLocation(0,1,"N");
+    public CarLocation report(CarLocation carLocation, String command) {
+        String direction = carLocation.getDirection();
+        if (command.equals("M")) {
+            if (direction.equals("N")) {
+                carLocation.setY(carLocation.getY()+1);
+            }
+        }
+        return carLocation;
     }
 }
