@@ -17,36 +17,40 @@ public class MarsRover {
 
     public CarLocation report(CarLocation carLocation, String command) {
         String direction = carLocation.getDirection();
-        if (command.equals(MOVE)) {
-            if (direction.equals(NORTH)) {
-                carLocation.setY(carLocation.getY() + 1);
-            } else if (direction.equals(EAST)) {
-                carLocation.setX(carLocation.getX() + 1);
-            } else if (direction.equals(SOUTH)) {
-                carLocation.setY(carLocation.getY() - 1);
-            } else if (direction.equals(WEST)) {
-                carLocation.setX(carLocation.getX() - 1);
-            }
-        } else if (command.equals(RIGHT)) {
-            if (direction.equals(NORTH)) {
-                carLocation.setDirection(EAST);
-            } else if (direction.equals(EAST)) {
-                carLocation.setDirection(SOUTH);
-            } else if (direction.equals(SOUTH)) {
-                carLocation.setDirection(WEST);
-            } else if (direction.equals(WEST)) {
-                carLocation.setDirection(NORTH);
-            }
-        } else if (command.equals(LEFT)) {
-            if (direction.equals(NORTH)) {
-                carLocation.setDirection(WEST);
-            } else if (direction.equals(WEST)) {
-                carLocation.setDirection(SOUTH);
-            } else if (direction.equals(SOUTH)) {
-                carLocation.setDirection(EAST);
-            } else if (direction.equals(EAST)) {
-                carLocation.setDirection(NORTH);
-            }
+        switch (command) {
+            case MOVE:
+                if (direction.equals(NORTH)) {
+                    carLocation.setY(carLocation.getY() + 1);
+                } else if (direction.equals(EAST)) {
+                    carLocation.setX(carLocation.getX() + 1);
+                } else if (direction.equals(SOUTH)) {
+                    carLocation.setY(carLocation.getY() - 1);
+                } else if (direction.equals(WEST)) {
+                    carLocation.setX(carLocation.getX() - 1);
+                }
+                break;
+            case RIGHT:
+                if (direction.equals(NORTH)) {
+                    carLocation.setDirection(EAST);
+                } else if (direction.equals(EAST)) {
+                    carLocation.setDirection(SOUTH);
+                } else if (direction.equals(SOUTH)) {
+                    carLocation.setDirection(WEST);
+                } else if (direction.equals(WEST)) {
+                    carLocation.setDirection(NORTH);
+                }
+                break;
+            case LEFT:
+                if (direction.equals(NORTH)) {
+                    carLocation.setDirection(WEST);
+                } else if (direction.equals(WEST)) {
+                    carLocation.setDirection(SOUTH);
+                } else if (direction.equals(SOUTH)) {
+                    carLocation.setDirection(EAST);
+                } else if (direction.equals(EAST)) {
+                    carLocation.setDirection(NORTH);
+                }
+                break;
         }
         return carLocation;
     }
