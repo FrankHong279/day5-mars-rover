@@ -23,4 +23,18 @@ public class MarsRoverTest {
         assertEquals(result.getY(),report.getY());
         assertEquals(result.getDirection(),report.getDirection());
     }
+
+    @Test
+    public void should_return_10E_when_00E_input_M(){
+        String command = "M";
+        CarLocation result = new CarLocation(1,0,"E");
+        MarsRover marsRover = new MarsRover();
+
+        CarLocation carLocation = new CarLocation(0, 0, "E");
+
+        CarLocation report = marsRover.report(carLocation, command);
+        assertEquals(result.getX(),report.getX());
+        assertEquals(result.getY(),report.getY());
+        assertEquals(result.getDirection(),report.getDirection());
+    }
 }
