@@ -40,7 +40,7 @@ public class DirectionFactory {
         return LEFT_TURN.get(direction);
     }
 
-    public static int[] getMoveDistance(String direction) {
+    public static int[] getForwardDistance(String direction) {
         return MOVE_FORWARD.get(direction);
     }
 

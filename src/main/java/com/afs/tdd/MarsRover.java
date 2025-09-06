@@ -20,7 +20,7 @@ public class MarsRover {
         String direction = position.getDirection();
         switch (command) {
             case MOVE:
-                int[] distanceTable = DirectionFactory.getMoveDistance(direction);
+                int[] distanceTable = DirectionFactory.getForwardDistance(direction);
                 position.setX(position.getX() + distanceTable[0]);
                 position.setY(position.getY() + distanceTable[1]);
                 break;
