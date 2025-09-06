@@ -13,168 +13,168 @@ public class MarsRoverTest {
     @Test
     public void should_return_01N_when_00N_input_M(){
         String command = "M";
-        Position result = new Position(0,1,"N");
+        Position expectedResult = new Position(0,1,"N");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "N");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_10E_when_00E_input_M(){
         String command = "M";
-        Position result = new Position(1,0,"E");
+        Position expectedResult = new Position(1,0,"E");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "E");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00S_when_01S_input_M(){
         String command = "M";
-        Position result = new Position(0,0,"S");
+        Position expectedResult = new Position(0,0,"S");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 1, "S");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00W_when_10W_input_M(){
         String command = "M";
-        Position result = new Position(0,0,"W");
+        Position expectedResult = new Position(0,0,"W");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(1, 0, "W");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00E_when_00N_input_R(){
         String command = "R";
-        Position result = new Position(0,0,"E");
+        Position expectedResult = new Position(0,0,"E");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "N");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00S_when_00E_input_R(){
         String command = "R";
-        Position result = new Position(0,0,"S");
+        Position expectedResult = new Position(0,0,"S");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "E");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00W_when_00S_input_R(){
         String command = "R";
-        Position result = new Position(0,0,"W");
+        Position expectedResult = new Position(0,0,"W");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "S");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00N_when_00W_input_R(){
         String command = "R";
-        Position result = new Position(0,0,"N");
+        Position expectedResult = new Position(0,0,"N");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "W");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00W_when_00N_input_L(){
         String command = "L";
-        Position result = new Position(0,0,"W");
+        Position expectedResult = new Position(0,0,"W");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "N");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00S_when_00W_input_L(){
         String command = "L";
-        Position result = new Position(0,0,"S");
+        Position expectedResult = new Position(0,0,"S");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "W");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00E_when_00S_input_L(){
         String command = "L";
-        Position result = new Position(0,0,"E");
+        Position expectedResult = new Position(0,0,"E");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "S");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 
     @Test
     public void should_return_00N_when_00E_input_L(){
         String command = "L";
-        Position result = new Position(0,0,"N");
+        Position expectedResult = new Position(0,0,"N");
         MarsRover marsRover = new MarsRover();
 
         Position position = new Position(0, 0, "E");
 
         Position report = marsRover.report(position, command);
-        assertEquals(result.getX(),report.getX());
-        assertEquals(result.getY(),report.getY());
-        assertEquals(result.getDirection(),report.getDirection());
+        assertEquals(expectedResult.getX(),report.getX());
+        assertEquals(expectedResult.getY(),report.getY());
+        assertEquals(expectedResult.getDirection(),report.getDirection());
     }
 }
