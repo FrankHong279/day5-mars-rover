@@ -14,6 +14,7 @@ public class MarsRover {
     public static final String MOVE = "M";
     public static final String RIGHT = "R";
     public static final String LEFT = "L";
+    public static final String BACK = "B";
 
     public Position report(Position position, String command) {
         String direction = position.getDirection();
@@ -29,6 +30,10 @@ public class MarsRover {
             case LEFT:
                 position.setDirection(DirectionFactory.turnLeft(direction));
                 break;
+            case BACK:
+                int[] backDistanceTable = DirectionFactory.getBackDistance(direction);
+                position.setX(position.getX() + backDistanceTable[0]);
+                position.setY(position.getY() + backDistanceTable[1]);
         }
         return position;
     }

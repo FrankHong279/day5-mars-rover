@@ -8,6 +8,7 @@ public class DirectionFactory {
     private static final Map<String, String> RIGHT_TURN = new HashMap<>();
     private static final Map<String, String> LEFT_TURN = new HashMap<>();
     private static final Map<String, int[]> MOVE_FORWARD = new HashMap<>();
+    private static final Map<String, int[]> MOVE_BACK = new HashMap<>();
 
     static {
         RIGHT_TURN.put(MarsRover.NORTH, MarsRover.EAST);
@@ -24,6 +25,8 @@ public class DirectionFactory {
         MOVE_FORWARD.put(MarsRover.EAST, new int[]{1, 0});
         MOVE_FORWARD.put(MarsRover.SOUTH, new int[]{0, -1});
         MOVE_FORWARD.put(MarsRover.WEST, new int[]{-1, 0});
+
+        MOVE_BACK.put(MarsRover.NORTH, new int[]{0, -1});
     }
 
     public static String turnRight(String direction) {
@@ -36,6 +39,10 @@ public class DirectionFactory {
 
     public static int[] getMoveDistance(String direction) {
         return MOVE_FORWARD.get(direction);
+    }
+
+    public static int[] getBackDistance(String direction) {
+        return MOVE_BACK.get(direction);
     }
 }
 
