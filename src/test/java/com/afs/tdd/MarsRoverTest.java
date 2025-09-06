@@ -219,4 +219,18 @@ public class MarsRoverTest {
         assertEquals(expectedResult.getY(),actualResult.getY());
         assertEquals(expectedResult.getDirection(),actualResult.getDirection());
     }
+
+    @Test
+    public void should_return_00W_when_01W_input_B(){
+        String command = "B";
+        Position expectedResult = new Position(1,0,"W");
+        MarsRover marsRover = new MarsRover();
+
+        Position position = new Position(0, 0, "W");
+
+        Position actualResult = marsRover.report(position, command);
+        assertEquals(expectedResult.getX(),actualResult.getX());
+        assertEquals(expectedResult.getY(),actualResult.getY());
+        assertEquals(expectedResult.getDirection(),actualResult.getDirection());
+    }
 }

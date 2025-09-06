@@ -29,6 +29,7 @@ public class DirectionFactory {
         MOVE_BACK.put(MarsRover.NORTH, new int[]{0, -1});
         MOVE_BACK.put(MarsRover.EAST, new int[]{-1, 0});
         MOVE_BACK.put(MarsRover.SOUTH, new int[]{0, 1});
+        MOVE_BACK.put(MarsRover.WEST, new int[]{1, 0});
     }
 
     public static String turnRight(String direction) {
