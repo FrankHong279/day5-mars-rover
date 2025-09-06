@@ -5,12 +5,12 @@ package com.afs.tdd;
  * @version 1.0
  * @date 9/5/2025 3:18 PM
  */
-public class CarLocation {
+public class Position {
     private int x;
     private int y;
     private String direction;
 
-    public CarLocation(int x, int y, String direction) {
+    public Position(int x, int y, String direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;

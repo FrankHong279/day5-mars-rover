@@ -15,43 +15,43 @@ public class MarsRover {
     public static final String RIGHT = "R";
     public static final String LEFT = "L";
 
-    public CarLocation report(CarLocation carLocation, String command) {
-        String direction = carLocation.getDirection();
+    public Position report(Position position, String command) {
+        String direction = position.getDirection();
         switch (command) {
             case MOVE:
                 if (direction.equals(NORTH)) {
-                    carLocation.setY(carLocation.getY() + 1);
+                    position.setY(position.getY() + 1);
                 } else if (direction.equals(EAST)) {
-                    carLocation.setX(carLocation.getX() + 1);
+                    position.setX(position.getX() + 1);
                 } else if (direction.equals(SOUTH)) {
-                    carLocation.setY(carLocation.getY() - 1);
+                    position.setY(position.getY() - 1);
                 } else if (direction.equals(WEST)) {
-                    carLocation.setX(carLocation.getX() - 1);
+                    position.setX(position.getX() - 1);
                 }
                 break;
             case RIGHT:
                 if (direction.equals(NORTH)) {
-                    carLocation.setDirection(EAST);
+                    position.setDirection(EAST);
                 } else if (direction.equals(EAST)) {
-                    carLocation.setDirection(SOUTH);
+                    position.setDirection(SOUTH);
                 } else if (direction.equals(SOUTH)) {
-                    carLocation.setDirection(WEST);
+                    position.setDirection(WEST);
                 } else if (direction.equals(WEST)) {
-                    carLocation.setDirection(NORTH);
+                    position.setDirection(NORTH);
                 }
                 break;
             case LEFT:
                 if (direction.equals(NORTH)) {
-                    carLocation.setDirection(WEST);
+                    position.setDirection(WEST);
                 } else if (direction.equals(WEST)) {
-                    carLocation.setDirection(SOUTH);
+                    position.setDirection(SOUTH);
                 } else if (direction.equals(SOUTH)) {
-                    carLocation.setDirection(EAST);
+                    position.setDirection(EAST);
                 } else if (direction.equals(EAST)) {
-                    carLocation.setDirection(NORTH);
+                    position.setDirection(NORTH);
                 }
                 break;
         }
-        return carLocation;
+        return position;
     }
 }
