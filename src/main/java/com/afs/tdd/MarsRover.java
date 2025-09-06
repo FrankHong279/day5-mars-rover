@@ -21,8 +21,7 @@ public class MarsRover {
         switch (command) {
             case MOVE:
                 int[] distanceTable = DirectionFactory.getForwardDistance(direction);
-                position.setX(position.getX() + distanceTable[0]);
-                position.setY(position.getY() + distanceTable[1]);
+                updatePosition(position, distanceTable);
                 break;
             case RIGHT:
                 position.setDirection(DirectionFactory.turnRight(direction));
@@ -32,9 +31,13 @@ public class MarsRover {
                 break;
             case BACK:
                 int[] backDistanceTable = DirectionFactory.getBackDistance(direction);
-                position.setX(position.getX() + backDistanceTable[0]);
-                position.setY(position.getY() + backDistanceTable[1]);
+                updatePosition(position, backDistanceTable);
         }
         return position;
+    }
+
+    private static void updatePosition(Position position, int[] distanceTable) {
+        position.setX(position.getX() + distanceTable[0]);
+        position.setY(position.getY() + distanceTable[1]);
     }
 }
