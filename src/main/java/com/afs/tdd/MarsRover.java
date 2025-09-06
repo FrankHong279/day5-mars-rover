@@ -1,5 +1,8 @@
 package com.afs.tdd;
 
+import java.util.Map;
+import java.util.HashMap;
+
 /**
  * @author HONGFR
  * @version 1.0
@@ -15,41 +18,40 @@ public class MarsRover {
     public static final String RIGHT = "R";
     public static final String LEFT = "L";
 
+    private static final Map<String, String> RIGHT_TURN = new HashMap<>();
+    private static final Map<String, String> LEFT_TURN = new HashMap<>();
+    private static final Map<String, int[]> MOVE_FORWARD = new HashMap<>();
+
+    static {
+        RIGHT_TURN.put(NORTH, EAST);
+        RIGHT_TURN.put(EAST, SOUTH);
+        RIGHT_TURN.put(SOUTH, WEST);
+        RIGHT_TURN.put(WEST, NORTH);
+
+        LEFT_TURN.put(NORTH, WEST);
+        LEFT_TURN.put(WEST, SOUTH);
+        LEFT_TURN.put(SOUTH, EAST);
+        LEFT_TURN.put(EAST, NORTH);
+
+        MOVE_FORWARD.put(NORTH, new int[]{0, 1});
+        MOVE_FORWARD.put(EAST, new int[]{1, 0});
+        MOVE_FORWARD.put(SOUTH, new int[]{0, -1});
+        MOVE_FORWARD.put(WEST, new int[]{-1, 0});
+    }
+
     public Position report(Position position, String command) {
         String direction = position.getDirection();
         switch (command) {
             case MOVE:
-                if (direction.equals(NORTH)) {
-                    position.setY(position.getY() + 1);
-                } else if (direction.equals(EAST)) {
-                    position.setX(position.getX() + 1);
-                } else if (direction.equals(SOUTH)) {
-                    position.setY(position.getY() - 1);
-                } else if (direction.equals(WEST)) {
-                    position.setX(position.getX() - 1);
-                }
+                int[] distanceTable = MOVE_FORWARD.get(direction);
+                position.setX(position.getX() + distanceTable[0]);
+                position.setY(position.getY() + distanceTable[1]);
                 break;
             case RIGHT:
-                if (direction.equals(NORTH)) {
-                    position.setDirection(EAST);
-                } else if (direction.equals(EAST)) {
-                    position.setDirection(SOUTH);
-                } else if (direction.equals(SOUTH)) {
-                    position.setDirection(WEST);
-                } else if (direction.equals(WEST)) {
-                    position.setDirection(NORTH);
-                }
+                position.setDirection(RIGHT_TURN.get(direction));
                 break;
             case LEFT:
-                if (direction.equals(NORTH)) {
-                    position.setDirection(WEST);
-                } else if (direction.equals(WEST)) {
-                    position.setDirection(SOUTH);
-                } else if (direction.equals(SOUTH)) {
-                    position.setDirection(EAST);
-                } else if (direction.equals(EAST)) {
-                    position.setDirection(NORTH);
-                }
+                position.setDirection(LEFT_TURN.get(direction));
                 break;
         }
         return position;
